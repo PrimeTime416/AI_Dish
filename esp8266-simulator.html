@@ -1,0 +1,627 @@
+<html lang="en"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ESP8266 Architecture Simulator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1e293b; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+        .bus-line { transition: all 0.3s ease; }
+        .component { transition: all 0.3s ease; }
+        
+        .active-component {
+            box-shadow: 0 0 15px 2px rgba(56, 189, 248, 0.6);
+            border-color: #38bdf8;
+            z-index: 20;
+        }
+
+        .write-flash { animation: flash-write 0.5s ease-out; }
+        .read-flash { animation: flash-read 0.5s ease-out; }
+
+        @keyframes flash-write {
+            0% { box-shadow: 0 0 20px #eab308; border-color: #eab308; background-color: #422006; }
+            100% { box-shadow: none; border-color: #475569; background-color: #0f172a; }
+        }
+
+        @keyframes flash-read {
+            0% { box-shadow: 0 0 20px #22c55e; border-color: #22c55e; }
+            100% { box-shadow: none; border-color: #475569; }
+        }
+        
+        .scanlines {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+            position: absolute; inset: 0; pointer-events: none; z-index: 10;
+        }
+        
+        .led-indicator {
+            width: 8px; height: 8px; border-radius: 50%;
+            background-color: #334155; transition: background-color 0.2s;
+        }
+        .led-on { background-color: #4ade80; box-shadow: 0 0 8px #4ade80; }
+        .led-busy { background-color: #f87171; box-shadow: 0 0 8px #f87171; }
+        .led-write { background-color: #eab308; box-shadow: 0 0 8px #eab308; }
+
+        .cache-line {
+            height: 4px; width: 100%; background-color: #1e293b;
+            margin-bottom: 2px; border-radius: 2px; transition: background-color 0.3s;
+        }
+        .cache-line.filled { background-color: #c084fc; }
+
+        .gpio-pin {
+            width: 12px; height: 12px; border-radius: 50%;
+            background-color: #1e293b; border: 1px solid #475569;
+            transition: all 0.2s;
+        }
+        .gpio-on { background-color: #38bdf8; box-shadow: 0 0 8px #38bdf8; border-color: #bae6fd; }
+
+        /* Column Headers */
+        .col-header {
+            text-align: center; font-size: 10px; font-weight: bold; color: #64748b;
+            text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #334155;
+            padding-bottom: 4px; margin-bottom: 12px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-left-3{left:-0.75rem}.-right-2{right:-0.5rem}.bottom-4{bottom:1rem}.bottom-\[25\%\]{bottom:25%}.right-4{right:1rem}.right-\[-6px\]{right:-6px}.top-1\/2{top:50%}.top-\[25\%\]{top:25%}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.col-span-2{grid-column:span 2 / span 2}.col-span-3{grid-column:span 3 / span 3}.col-span-4{grid-column:span 4 / span 4}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.ml-4{margin-left:1rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-1\/3{height:33.333333%}.h-3{height:0.75rem}.h-full{height:100%}.h-screen{height:100vh}.max-h-32{max-height:8rem}.w-1\/4{width:25%}.w-3{width:0.75rem}.w-64{width:16rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.flex-none{flex:none}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.justify-items-center{justify-items:center}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-r{border-right-width:1px}.border-dashed{border-style:dashed}.border-blue-500\/30{border-color:rgb(59 130 246 / 0.3)}.border-cyan-700\/50{border-color:rgb(14 116 144 / 0.5)}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-700\/50{border-color:rgb(51 65 85 / 0.5)}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-l-green-500{--tw-border-opacity:1;border-left-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-l-purple-500{--tw-border-opacity:1;border-left-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-l-yellow-500{--tw-border-opacity:1;border-left-color:rgb(234 179 8 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-blue-900\/30{background-color:rgb(30 58 138 / 0.3)}.bg-cyan-900\/30{background-color:rgb(22 78 99 / 0.3)}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-green-900\/30{background-color:rgb(20 83 45 / 0.3)}.bg-purple-900\/30{background-color:rgb(88 28 135 / 0.3)}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.bg-slate-700\/50{background-color:rgb(51 65 85 / 0.5)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/95{background-color:rgb(15 23 42 / 0.95)}.bg-yellow-500{--tw-bg-opacity:1;background-color:rgb(234 179 8 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-1{padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.pl-2{padding-left:0.5rem}.pr-2{padding-right:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[12px\]{font-size:12px}.text-\[8px\]{font-size:8px}.text-\[9px\]{font-size:9px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-wider{letter-spacing:0.05em}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-cyan-500{--tw-text-opacity:1;color:rgb(6 182 212 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-30{opacity:0.3}.opacity-5{opacity:0.05}.opacity-70{opacity:0.7}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-blue-400:hover{--tw-border-opacity:1;border-color:rgb(96 165 250 / var(--tw-border-opacity, 1))}.hover\:border-green-500:hover{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.hover\:border-orange-500:hover{--tw-border-opacity:1;border-color:rgb(249 115 22 / var(--tw-border-opacity, 1))}.hover\:border-purple-400:hover{--tw-border-opacity:1;border-color:rgb(192 132 252 / var(--tw-border-opacity, 1))}.hover\:border-yellow-500:hover{--tw-border-opacity:1;border-color:rgb(234 179 8 / var(--tw-border-opacity, 1))}.hover\:bg-cyan-800\/50:hover{background-color:rgb(21 94 117 / 0.5)}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.group:hover .group-hover\:animate-bounce{animation:bounce 1s infinite}</style></head>
+<body class="h-screen flex flex-col overflow-hidden relative">
+<div class="scanlines"></div>
+<!-- Header -->
+<header class="bg-slate-900 border-b border-slate-700 p-3 z-20 shadow-md flex-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-400 text-3xl">memory</span>
+<div>
+<h1 class="text-xl font-bold text-cyan-400 tracking-wider">ESP8266 SIMULATOR</h1>
+<p class="text-xs text-slate-400">4-Stage Pipeline: Core • Bus • RAM • External</p>
+</div>
+</div>
+<div class="flex items-center gap-6 text-xs">
+<!-- LEDs -->
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="led-indicator" id="cpu-led"></div>
+<span>CPU</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="led-indicator" id="arbiter-led"></div>
+<span>ARBITER</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="led-indicator" id="rw-led"></div>
+<span>R/W OP</span>
+</div>
+</div>
+<!-- Download Button -->
+<button class="flex items-center gap-2 px-3 py-1 bg-cyan-900/30 hover:bg-cyan-800/50 border border-cyan-700/50 rounded text-cyan-400 transition-colors ml-4 group" onclick="downloadApp()" title="Download HTML to run locally">
+<span class="material-symbols-outlined text-sm group-hover:animate-bounce">download</span>
+<span class="font-bold">DOWNLOAD SIMULATOR</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex overflow-hidden max-w-7xl mx-auto w-full p-4 gap-4 z-20">
+<!-- Controls -->
+<aside class="w-1/4 flex flex-col gap-4">
+<div class="bg-slate-800 rounded-lg border border-slate-700 p-4 shadow-lg flex-1 flex flex-col overflow-hidden">
+<h2 class="text-xs font-bold text-slate-300 mb-3 uppercase border-b border-slate-600 pb-2">Operations</h2>
+<div class="space-y-2 flex-1 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Core Instructions -->
+<div class="text-[10px] font-bold text-slate-500 mt-1 mb-1">PROGRAM MEMORY (iRAM)</div>
+<button class="w-full text-left p-2 rounded bg-slate-700/50 hover:bg-slate-700 border border-slate-600 hover:border-green-500 transition-all group" onclick="sim.injectTask('iram_fetch')">
+<div class="flex justify-between items-center">
+<span class="font-bold text-green-400 text-xs">Fetch Instruction</span>
+<span class="text-[9px] bg-green-900/30 text-green-400 px-1 rounded">READ</span>
+</div>
+<p class="text-[9px] text-slate-500 font-mono">iBus -&gt; iRAM</p>
+</button>
+<!-- Data Operations -->
+<div class="text-[10px] font-bold text-slate-500 mt-3 mb-1">DATA MEMORY (dRAM)</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="text-left p-2 rounded bg-slate-700/50 hover:bg-slate-700 border border-slate-600 hover:border-yellow-500 transition-all group" onclick="sim.injectTask('dram_read')">
+<span class="font-bold text-yellow-400 text-xs block mb-1">Load (Read)</span>
+<span class="text-[9px] text-slate-500 block">CPU &lt;- RAM</span>
+</button>
+<button class="text-left p-2 rounded bg-slate-700/50 hover:bg-slate-700 border border-slate-600 hover:border-orange-500 transition-all group" onclick="sim.injectTask('dram_write')">
+<span class="font-bold text-orange-400 text-xs block mb-1">Store (Write)</span>
+<span class="text-[9px] text-slate-500 block">CPU -&gt; RAM</span>
+</button>
+</div>
+<!-- External / Cache -->
+<div class="text-[10px] font-bold text-slate-500 mt-3 mb-1">EXTERNAL MEMORY (FLASH)</div>
+<button class="w-full text-left p-2 rounded bg-slate-700/50 hover:bg-slate-700 border border-slate-600 hover:border-purple-400 transition-all group" onclick="sim.injectFlashTask('loop')">
+<div class="flex justify-between items-center">
+<span class="font-bold text-purple-300 text-xs">Execute Cached Code</span>
+<span class="text-[9px] bg-purple-900/30 text-purple-300 px-1 rounded">R/O</span>
+</div>
+<p class="text-[9px] text-slate-400">Hits Cache or Fetches SPI</p>
+</button>
+<button class="w-full mt-1 text-center p-1 rounded bg-slate-800 border border-dashed border-slate-600 text-[9px] text-slate-500 hover:text-white" onclick="sim.flushCache()">
+                        FLUSH CACHE
+                    </button>
+<!-- GPIO -->
+<div class="text-[10px] font-bold text-slate-500 mt-3 mb-1">EXTERNAL PERIPHERALS</div>
+<button class="w-full text-left p-2 rounded bg-slate-700/50 hover:bg-slate-700 border border-slate-600 hover:border-blue-400 transition-all group" onclick="sim.injectTask('gpio_toggle')">
+<div class="flex justify-between items-center">
+<span class="font-bold text-blue-400 text-xs">Toggle GPIO LED</span>
+<span class="text-[9px] bg-blue-900/30 text-blue-400 px-1 rounded">WRITE</span>
+</div>
+<p class="text-[9px] text-slate-500 font-mono">AHB -&gt; GPIO Output</p>
+</button>
+</div>
+</div>
+<!-- Log -->
+<div class="bg-black rounded-lg border border-slate-700 p-3 h-1/3 overflow-hidden flex flex-col font-mono text-xs shadow-inner">
+<div class="text-slate-500 border-b border-slate-800 pb-1 mb-2 flex justify-between">
+<span>SYSTEM BUS LOG</span>
+<span class="text-[10px] cursor-pointer hover:text-white" onclick="document.getElementById('system-log').innerHTML=''">CLEAR</span>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1 text-green-500" id="system-log">
+<div class="opacity-70">&gt; System Ready.</div>
+</div>
+</div>
+</aside>
+<!-- Visualizer -->
+<div class="flex-1 bg-slate-800 rounded-lg border border-slate-700 relative overflow-hidden shadow-2xl" id="visualizer-container">
+<!-- Grid Background -->
+<div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(to right, #475569 1px, transparent 1px); background-size: 25% 100%;"></div>
+<div class="absolute inset-0 p-4">
+<!-- 4 Column Layout: Core | Bus | RAM | External -->
+<div class="grid grid-cols-12 h-full gap-4 relative">
+<!-- COL 1: CORE (2/12) -->
+<div class="col-span-2 relative flex flex-col justify-center h-full border-r border-slate-700/50 pr-2">
+<div class="col-header">CORE</div>
+<!-- CPU -->
+<div class="component bg-slate-900 border-2 border-slate-600 rounded-xl flex flex-col items-center justify-center p-4 relative z-10" id="comp-cpu">
+<span class="material-symbols-outlined text-4xl text-cyan-500 mb-2">memory</span>
+<div class="text-center font-bold text-cyan-500 text-sm">L106</div>
+<div class="text-[10px] text-slate-500 text-center">32-bit RISC<br>Harvard Arch</div>
+<!-- Ports -->
+<div class="absolute top-[25%] right-[-6px] w-3 h-3 bg-green-500 rounded-full border border-slate-800 z-20" title="iBus Port"></div>
+<div class="absolute bottom-[25%] right-[-6px] w-3 h-3 bg-yellow-500 rounded-full border border-slate-800 z-20" title="dBus Port"></div>
+</div>
+</div>
+<!-- COL 2: BUS (3/12) -->
+<div class="col-span-3 relative flex flex-col justify-center h-full border-r border-slate-700/50 px-2">
+<div class="col-header">BUS INTERCONNECT</div>
+<!-- Arbiter -->
+<div class="component bg-slate-900 border-2 border-slate-500 rounded-lg flex flex-col items-center justify-center p-4 py-8 z-10 relative" id="comp-arbiter">
+<span class="material-symbols-outlined text-3xl text-orange-500">hub</span>
+<div class="text-xs font-bold text-orange-500 mt-2">MEMORY ARBITER</div>
+<div class="text-[9px] text-slate-500 text-center mt-1">Serializes Requests<br>Prioritizes iBus</div>
+</div>
+</div>
+<!-- COL 3: RAM (3/12) -->
+<div class="col-span-3 relative flex flex-col h-full border-r border-slate-700/50 px-2">
+<div class="col-header">INTERNAL RAM</div>
+<div class="flex flex-col justify-between h-full py-8">
+<!-- iRAM -->
+<div class="component bg-slate-900 border-l-4 border-l-green-500 border border-slate-700 rounded p-2 z-10 mb-2" id="comp-iram">
+<div class="flex justify-between items-center mb-1">
+<div class="text-[10px] font-bold text-green-400">iRAM</div>
+<span class="text-[9px] text-slate-600">32KB</span>
+</div>
+<div class="text-[8px] text-slate-500">0x40100000<br>Interrupts/Fast</div>
+</div>
+<!-- Cache Controller -->
+<div class="component bg-slate-900 border-l-4 border-l-purple-500 border border-slate-700 rounded p-2 z-10 mb-2 flex-1 max-h-32 flex flex-col" id="comp-cache">
+<div class="flex justify-between items-center border-b border-slate-800 pb-1 mb-1">
+<div class="text-[10px] font-bold text-purple-400">CACHE CTRL</div>
+<span class="text-[9px] text-slate-600">TAG RAM</span>
+</div>
+<div class="flex-1 flex flex-col justify-evenly px-1" id="cache-lines">
+<div class="cache-line" id="cl-0"></div>
+<div class="cache-line" id="cl-1"></div>
+<div class="cache-line" id="cl-2"></div>
+<div class="cache-line" id="cl-3"></div>
+<div class="cache-line" id="cl-4"></div>
+</div>
+<div class="absolute -right-2 top-1/2 -translate-y-1/2 bg-slate-900 border border-slate-600 text-slate-400 text-[9px] px-1 rounded hidden z-20" id="cache-status">HIT</div>
+</div>
+<!-- dRAM -->
+<div class="component bg-slate-900 border-l-4 border-l-yellow-500 border border-slate-700 rounded p-2 z-10" id="comp-dram">
+<div class="flex justify-between items-center mb-1">
+<div class="text-[10px] font-bold text-yellow-400">dRAM</div>
+<span class="text-[9px] text-slate-600">80KB</span>
+</div>
+<div class="text-[8px] text-slate-500">0x3FFE8000<br>Heap/Stack</div>
+</div>
+</div>
+</div>
+<!-- COL 4: EXTERNAL (4/12) -->
+<div class="col-span-4 relative flex flex-col h-full pl-2">
+<div class="col-header">EXTERNAL IO</div>
+<div class="flex flex-col h-full py-8 gap-8">
+<!-- Flash -->
+<div class="component bg-black border border-slate-600 rounded p-3 z-10 flex flex-col justify-center items-center shadow-xl relative" id="comp-flash">
+<div class="absolute -left-3 top-1/2 w-3 h-1 bg-slate-600"></div> <!-- SPI Bus Stub -->
+<span class="material-symbols-outlined text-2xl text-slate-400">sd_storage</span>
+<div class="text-[10px] font-bold text-slate-300 mt-1">SPI FLASH</div>
+<div class="text-[8px] text-slate-500 mt-1">Mapped: 0x4020...</div>
+</div>
+<div class="flex-1"></div> <!-- Spacer -->
+<!-- GPIO -->
+<div class="component bg-slate-900 border border-blue-500/30 rounded p-3 z-10 flex flex-col shadow-lg" id="comp-gpio">
+<div class="text-[10px] font-bold text-blue-400 mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">settings_input_component</span>
+                                    GPIO PINS
+                                </div>
+<div class="grid grid-cols-4 gap-2 justify-items-center">
+<div class="gpio-pin" id="pin-0"></div>
+<div class="gpio-pin" id="pin-1"></div>
+<div class="gpio-pin" id="pin-2"></div>
+<div class="gpio-pin" id="pin-3"></div>
+<div class="gpio-pin" id="pin-4"></div>
+<div class="gpio-pin" id="pin-5"></div>
+<div class="gpio-pin" id="pin-12"></div>
+<div class="gpio-pin" id="pin-13"></div>
+</div>
+<div class="text-[8px] text-slate-500 mt-2 text-center">Multiplexed / Shared</div>
+</div>
+</div>
+</div>
+<!-- SVG OVERLAY FOR BUS CONNECTIONS -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" id="bus-svg">
+<!-- Paths will be drawn dynamically based on layout, but let's hardcode for the grid structure -->
+<!-- CPU(Col1) to Arbiter(Col2) -->
+<path class="bus-line opacity-30" d="M 16% 40% L 25% 40% L 25% 48% L 29% 48%" fill="none" stroke="#22c55e" stroke-width="2"></path> <!-- iBus -->
+<path class="bus-line opacity-30" d="M 16% 60% L 25% 60% L 25% 52% L 29% 52%" fill="none" stroke="#eab308" stroke-width="2"></path> <!-- dBus -->
+<!-- Arbiter(Col2) to RAMs(Col3) -->
+<path class="bus-line opacity-30" d="M 42% 50% L 50% 50%" fill="none" stroke="#94a3b8" stroke-width="2"></path> <!-- Main Trunk -->
+<!-- Trunk Fanout -->
+<path class="bus-line opacity-30" d="M 50% 50% L 50% 15% L 54% 15%" fill="none" stroke="#22c55e" stroke-dasharray="2 2" stroke-width="1"></path> <!-- to iRAM -->
+<path class="bus-line opacity-30" d="M 50% 50% L 50% 50% L 54% 50%" fill="none" stroke="#a855f7" stroke-width="2"></path> <!-- to Cache -->
+<path class="bus-line opacity-30" d="M 50% 50% L 50% 85% L 54% 85%" fill="none" stroke="#eab308" stroke-dasharray="2 2" stroke-width="1"></path> <!-- to dRAM -->
+<!-- Cache(Col3) to Flash(Col4) -->
+<path class="bus-line opacity-30" d="M 66% 50% L 75% 50% L 75% 20% L 80% 20%" fill="none" stroke="#ef4444" stroke-width="2"></path>
+<!-- Arbiter to GPIO (Col4 Bottom) -->
+<path class="bus-line opacity-30" d="M 42% 50% L 46% 50% L 46% 80% L 80% 80%" fill="none" stroke="#3b82f6" stroke-dasharray="2 2" stroke-width="1"></path>
+</svg>
+</div>
+</div>
+<!-- Animation Layer -->
+<div class="absolute inset-0 pointer-events-none z-20" id="anim-layer"></div>
+<!-- Info Panel -->
+<div class="absolute bottom-4 right-4 bg-slate-900/95 backdrop-blur border border-slate-600 p-3 rounded shadow-2xl transition-opacity duration-300 opacity-0 w-64 z-30" id="info-panel">
+<h4 class="text-xs font-bold text-cyan-400 mb-1" id="info-title">Component</h4>
+<p class="text-[10px] text-slate-300 leading-relaxed" id="info-text">Details...</p>
+</div>
+</div>
+</main>
+<script>
+        class Simulator {
+            constructor() {
+                this.queue = [];
+                this.isProcessing = false;
+                this.cache = new Set();
+                this.cacheLimit = 5;
+                
+                // Addresses for demo
+                this.loopAddr = 0x40201000;
+                this.linearAddr = 0x40205000;
+                
+                // DOM
+                this.logEl = document.getElementById('system-log');
+                this.animLayer = document.getElementById('anim-layer');
+                this.cpuLed = document.getElementById('cpu-led');
+                this.arbiterLed = document.getElementById('arbiter-led');
+                this.rwLed = document.getElementById('rw-led');
+
+                // Start Loop
+                this.processQueue();
+            }
+
+            log(msg, type='normal') {
+                const div = document.createElement('div');
+                div.innerText = `> ${msg}`;
+                if(type === 'read') div.classList.add('text-green-400');
+                if(type === 'write') div.classList.add('text-orange-400');
+                if(type === 'error') div.classList.add('text-red-400');
+                this.logEl.appendChild(div);
+                this.logEl.scrollTop = this.logEl.scrollHeight;
+            }
+
+            injectTask(type) {
+                const tasks = {
+                    'iram_fetch': { type: 'read', target: 'iram', name: 'iRAM Fetch', info: 'Fetching instruction from internal RAM (Fast)' },
+                    'dram_read': { type: 'read', target: 'dram', name: 'dRAM Load', info: 'Reading variable from Data RAM' },
+                    'dram_write': { type: 'write', target: 'dram', name: 'dRAM Store', info: 'Writing variable to Data RAM' },
+                    'gpio_toggle': { type: 'write', target: 'gpio', name: 'GPIO Toggle', info: 'Writing to GPIO Register' }
+                };
+                if(tasks[type]) this.queue.push(tasks[type]);
+            }
+
+            injectFlashTask(mode) {
+                let addrHex;
+                if(mode === 'loop') {
+                    this.loopAddr = (this.loopAddr === 0x40201000) ? 0x40201010 : 0x40201000;
+                    addrHex = this.loopAddr.toString(16);
+                }
+                this.queue.push({ 
+                    type: 'read', 
+                    target: 'flash', 
+                    addr: addrHex, 
+                    name: `Flash Exec ${addrHex}`,
+                    info: 'Executing code mapped to External Flash'
+                });
+            }
+
+            flushCache() {
+                this.cache.clear();
+                this.updateCacheUI();
+                this.log("Cache Flushed.", 'error');
+            }
+
+            async processQueue() {
+                if(this.queue.length === 0 || this.isProcessing) {
+                    requestAnimationFrame(() => this.processQueue());
+                    return;
+                }
+
+                this.isProcessing = true;
+                const task = this.queue.shift();
+                
+                this.log(`CPU: Initiating ${task.name}...`);
+                this.cpuLed.classList.add('led-on');
+                this.setHighlight('comp-cpu', true);
+
+                // Step 1: CPU -> Arbiter
+                await this.animatePacket('comp-cpu', 'comp-arbiter', task.type === 'read' ? 'green' : 'orange');
+                this.setHighlight('comp-cpu', false);
+                this.setHighlight('comp-arbiter', true);
+                this.arbiterLed.classList.add('led-busy');
+                
+                await this.wait(200); // Arbitration
+
+                // Step 2: Arbiter -> Target
+                let targetId = `comp-${task.target}`;
+                if(task.target === 'flash') targetId = 'comp-cache'; // Flash requests go to Cache first
+
+                this.setHighlight('comp-arbiter', false);
+                this.arbiterLed.classList.remove('led-busy');
+                
+                // Route packet
+                await this.animatePacket('comp-arbiter', targetId, task.type === 'read' ? 'green' : 'orange');
+                this.setHighlight(targetId, true);
+
+                // Step 3: Target Logic
+                if (task.target === 'dram' || task.target === 'iram') {
+                    // RAM ACCESS
+                    if(task.type === 'write') {
+                        // WRITE: Flash component, no return packet needed (Ack implied)
+                        document.getElementById(targetId).classList.add('write-flash');
+                        this.rwLed.classList.add('led-write');
+                        this.log(`${task.name}: Data Written.`, 'write');
+                        await this.wait(300);
+                        document.getElementById(targetId).classList.remove('write-flash');
+                        this.rwLed.classList.remove('led-write');
+                    } else {
+                        // READ: Wait, then send data back
+                        this.rwLed.classList.add('led-on');
+                        await this.wait(300); 
+                        document.getElementById(targetId).classList.add('read-flash');
+                        
+                        // Return Trip: Target -> Arbiter -> CPU
+                        this.setHighlight(targetId, false);
+                        await this.animatePacket(targetId, 'comp-arbiter', 'green');
+                        await this.animatePacket('comp-arbiter', 'comp-cpu', 'green');
+                        
+                        document.getElementById(targetId).classList.remove('read-flash');
+                        this.rwLed.classList.remove('led-on');
+                        this.log(`${task.name}: Data Received.`, 'read');
+                        
+                        // Flash CPU to show receipt
+                        document.getElementById('comp-cpu').classList.add('read-flash');
+                        setTimeout(() => document.getElementById('comp-cpu').classList.remove('read-flash'), 300);
+                    }
+                } 
+                else if (task.target === 'gpio') {
+                    // GPIO TOGGLE
+                    this.log("GPIO: Toggling Pin State", 'write');
+                    const pins = document.querySelectorAll('.gpio-pin');
+                    const randomPin = pins[Math.floor(Math.random() * pins.length)];
+                    randomPin.classList.toggle('gpio-on');
+                    await this.wait(200);
+                }
+                else if (task.target === 'flash') {
+                    // CACHE LOGIC
+                    const isHit = this.cache.has(task.addr);
+                    const statusEl = document.getElementById('cache-status');
+                    
+                    if(isHit) {
+                        // HIT
+                        statusEl.innerText = "HIT";
+                        statusEl.classList.remove('hidden', 'text-red-400', 'border-red-500');
+                        statusEl.classList.add('text-green-400', 'border-green-500');
+                        this.log(`Cache HIT [${task.addr}]`, 'read');
+                        
+                        // Return immediately
+                        await this.wait(200);
+                        await this.animatePacket('comp-cache', 'comp-arbiter', 'green');
+                        await this.animatePacket('comp-arbiter', 'comp-cpu', 'green');
+                    } else {
+                        // MISS
+                        statusEl.innerText = "MISS";
+                        statusEl.classList.remove('hidden', 'text-green-400', 'border-green-500');
+                        statusEl.classList.add('text-red-400', 'border-red-500');
+                        this.log(`Cache MISS [${task.addr}] -> SPI Bus`, 'error');
+
+                        // Cache -> Flash
+                        await this.animatePacket('comp-cache', 'comp-flash', 'red');
+                        this.setHighlight('comp-flash', true);
+                        await this.wait(800); // Slow penalty
+                        this.setHighlight('comp-flash', false);
+                        
+                        // Flash -> Cache
+                        await this.animatePacket('comp-flash', 'comp-cache', 'purple');
+                        
+                        // Update Cache
+                        this.addToCache(task.addr);
+                        this.log(`Cache Filled [${task.addr}]`);
+                        
+                        // Cache -> CPU
+                        await this.animatePacket('comp-cache', 'comp-arbiter', 'green');
+                        await this.animatePacket('comp-arbiter', 'comp-cpu', 'green');
+                    }
+                    statusEl.classList.add('hidden');
+                }
+
+                this.setHighlight(targetId, false);
+                this.setHighlight('comp-cpu', false);
+                this.cpuLed.classList.remove('led-on');
+                this.isProcessing = false;
+                this.processQueue();
+            }
+
+            addToCache(addr) {
+                if(this.cache.size >= this.cacheLimit) {
+                    const first = this.cache.values().next().value;
+                    this.cache.delete(first);
+                }
+                this.cache.add(addr);
+                this.updateCacheUI();
+            }
+
+            updateCacheUI() {
+                const lines = document.querySelectorAll('.cache-line');
+                lines.forEach(l => l.classList.remove('filled'));
+                for(let i=0; i<this.cache.size; i++) {
+                    if(lines[i]) lines[i].classList.add('filled');
+                }
+            }
+
+            setHighlight(id, active) {
+                const el = document.getElementById(id);
+                if(active) el.classList.add('active-component');
+                else el.classList.remove('active-component');
+            }
+
+            wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+            async animatePacket(fromId, toId, color) {
+                const startEl = document.getElementById(fromId);
+                const endEl = document.getElementById(toId);
+                const rectStart = startEl.getBoundingClientRect();
+                const rectEnd = endEl.getBoundingClientRect();
+                const container = document.getElementById('visualizer-container').getBoundingClientRect();
+
+                const startX = rectStart.left + rectStart.width/2 - container.left;
+                const startY = rectStart.top + rectStart.height/2 - container.top;
+                const endX = rectEnd.left + rectEnd.width/2 - container.left;
+                const endY = rectEnd.top + rectEnd.height/2 - container.top;
+
+                const packet = document.createElement('div');
+                const bg = color === 'green' ? 'bg-green-400' : color === 'orange' ? 'bg-orange-400' : color === 'red' ? 'bg-red-500' : 'bg-purple-400';
+                
+                packet.className = `absolute w-3 h-3 rounded-full shadow-lg border border-white z-50 ${bg}`;
+                packet.style.left = `${startX}px`;
+                packet.style.top = `${startY}px`;
+                this.animLayer.appendChild(packet);
+
+                // Force reflow
+                packet.offsetHeight;
+
+                packet.style.transition = `all 0.4s linear`;
+                packet.style.left = `${endX}px`;
+                packet.style.top = `${endY}px`;
+
+                await this.wait(400);
+                packet.remove();
+            }
+        }
+
+        const sim = new Simulator();
+
+        // Download Feature
+        function downloadApp() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], {type: 'text/html'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'esp8266-simulator.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Info Panel Hover Logic
+        const infoMap = {
+            'comp-cpu': 'L106 Core: 32-bit RISC. Issues Read/Write requests via iBus (Instructions) and dBus (Data).',
+            'comp-arbiter': 'Arbiter: Serializes concurrent requests. Prevents bus contention between CPU and Peripherals.',
+            'comp-iram': 'iRAM (Instruction RAM): Fast, internal memory (32KB). Stores Interrupt Handlers and critical functions.',
+            'comp-dram': 'dRAM (Data RAM): 80KB read/write memory for variables, stack, and heap.',
+            'comp-cache': 'Cache Controller: Maps external flash to memory space. Buffers instructions to hide SPI latency.',
+            'comp-flash': 'SPI Flash: External storage. Large but slow. Accessed via SPI bus when Cache Miss occurs.',
+            'comp-gpio': 'GPIO Controller: Manages external pins. Accessed as a peripheral via the system bus (Write operations).'
+        };
+
+        Object.keys(infoMap).forEach(id => {
+            const el = document.getElementById(id);
+            const panel = document.getElementById('info-panel');
+            const title = document.getElementById('info-title');
+            const text = document.getElementById('info-text');
+            
+            if(el) {
+                el.addEventListener('mouseenter', () => {
+                    title.innerText = id.replace('comp-', '').toUpperCase();
+                    text.innerText = infoMap[id];
+                    panel.style.opacity = 1;
+                });
+                el.addEventListener('mouseleave', () => {
+                    panel.style.opacity = 0;
+                });
+            }
+        });
+    </script>
+
+</body></html>
